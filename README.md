@@ -10,11 +10,11 @@
 
 ![Demo](./.github/media/logo.png)
 
-A Minecraft mod that brings the complete Copper Age experience to older Minecraft versions. Starting with the beloved Copper Golem from the Minecraft Live 2021 mob vote, this mod will gradually introduce all copper-related blocks, items, and mechanics over time.
+A Minecraft mod that brings the complete Copper Age experience to Minecraft 1.21.1. Starting with the beloved Copper Golem from the Minecraft Live 2021 mob vote, this mod introduces all copper-related blocks, items, and mechanics.
 
 ## Copper Age Backport
 
-Whether you're playing on **1.20.1** or **1.21.1**, you'll get access to the full Copper Age feature set: Copper Chests, Statues, Buttons, and the Copper Golem himself – all functioning identically to newer releases with complete oxidation systems and transport logic. More copper content will be added in future updates to bring the entire Copper Age ecosystem to older versions.
+Experience the full Copper Age feature set in Minecraft 1.21.1: Copper Chests, Statues, Buttons, Wooden Shelves, and the Copper Golem himself – all with complete oxidation systems and transport logic.
 
 ![transport](./.github/media/transport.gif)
 
