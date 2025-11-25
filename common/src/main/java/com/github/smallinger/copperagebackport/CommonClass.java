@@ -26,6 +26,7 @@ public class CommonClass {
         
         // Register all content
         ModMemoryTypes.register();
+        ModParticles.register();
         ModBlocks.register();
         ModBlockEntities.register();
         ModEntities.register();

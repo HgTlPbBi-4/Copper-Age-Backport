@@ -141,6 +141,8 @@ public class CopperAgeBackportFabric implements ModInitializer {
             entries.accept(ModItems.WAXED_EXPOSED_COPPER_BUTTON_ITEM.get());
             entries.accept(ModItems.WAXED_WEATHERED_COPPER_BUTTON_ITEM.get());
             entries.accept(ModItems.WAXED_OXIDIZED_COPPER_BUTTON_ITEM.get());
+            // Copper Torch
+            entries.accept(ModItems.COPPER_TORCH_ITEM.get());
         });
         
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> {

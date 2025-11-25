@@ -9,8 +9,10 @@ import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.core.Direction;
 
 import java.util.function.Supplier;
 
@@ -90,6 +92,9 @@ public class ModItems {
     public static Supplier<BlockItem> WARPED_SHELF_ITEM;
     public static Supplier<BlockItem> PALE_OAK_SHELF_ITEM; // Requires VanillaBackport for crafting
     
+    // Copper Torch Item
+    public static Supplier<StandingAndWallBlockItem> COPPER_TORCH_ITEM;
+
     public static void register() {
         Constants.LOG.info("Registering items for {}", Constants.MOD_NAME);
         
@@ -217,6 +222,14 @@ public class ModItems {
                 () -> new BlockItem(ModBlocks.PALE_OAK_SHELF.get(), new Item.Properties()));
         }
         
+        // Register Copper Torch Item
+        COPPER_TORCH_ITEM = helper.register(ITEM, "copper_torch",
+            () -> new StandingAndWallBlockItem(
+                ModBlocks.COPPER_TORCH.get(),
+                ModBlocks.COPPER_WALL_TORCH.get(),
+                new Item.Properties(),
+                Direction.DOWN));
+
         // Register Copper Tools
         // Copper Axe: 7.0 base attack damage + 1.0 material bonus = 8 total, -3.2 attack speed
         COPPER_AXE = helper.register(ITEM, "copper_axe",

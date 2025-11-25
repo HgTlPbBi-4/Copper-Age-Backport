@@ -114,6 +114,8 @@ public class CopperAgeBackportNeoForge {
             event.accept(ModItems.WAXED_EXPOSED_COPPER_BUTTON_ITEM.get());
             event.accept(ModItems.WAXED_WEATHERED_COPPER_BUTTON_ITEM.get());
             event.accept(ModItems.WAXED_OXIDIZED_COPPER_BUTTON_ITEM.get());
+            // Copper Torch
+            event.accept(ModItems.COPPER_TORCH_ITEM.get());
         }
         
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
