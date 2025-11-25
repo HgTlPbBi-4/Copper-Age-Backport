@@ -3,7 +3,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.1-green.svg)](https://www.minecraft.net/)
-[![NeoForge](https://img.shields.io/badge/NeoForge-21.1.80-orange.svg)](https://neoforged.net/)
+[![NeoForge](https://img.shields.io/badge/NeoForge-21.1.115-orange.svg)](https://neoforged.net/)
 [![Fabric](https://img.shields.io/badge/Fabric-0.109.0-blue.svg)](https://fabricmc.net/)
 [![Discord](https://img.shields.io/discord/1441831886719811654?label=Discord&logo=discord&color=5865F2)](https://discord.gg/hGrWUW9vSb)
 [![Crowdin](https://badges.crowdin.net/copper-golem-legacy/localized.svg)](https://crowdin.com/project/copper-golem-legacy)
@@ -122,7 +122,7 @@ cd Copper-Golem-Legacy
 ### Requirements
 - Java 21
 - Gradle 8.11 (included via wrapper)
-- NeoForge 21.1.80 or Fabric Loader 0.16.9 for Minecraft 1.21.1
+- NeoForge 21.1.115 or Fabric Loader 0.16.9 for Minecraft 1.21.1
 
 ### Setup
 ```bash
