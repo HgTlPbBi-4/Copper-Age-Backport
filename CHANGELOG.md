@@ -33,6 +33,7 @@ All notable changes to this project will be documented in this file.
 - **Copper Tools & Armor**: Fixed stackability - all copper tools and armor are now correctly unstackable (max stack size 1)
 - **Copper Nugget Compatibility**: Added tag support for cross-mod compatibility (c:nuggets/copper, c:copper_nuggets) - now works with other mods on both NeoForge and Fabric
 - **Copper Golem Crash**: Fixed server crash when Copper Golem tried to evaluate item pickups (missing ATTACK_DAMAGE attribute)
+- **Creative Tab Sorting**: Copper tools, armor, and nuggets now appear after their vanilla counterparts (stone tools, chainmail armor, iron nugget) instead of at the bottom of tabs
 
 ## [1.21.1] - 0.1.0 - 25.11.2025 Copper Age Backport
 

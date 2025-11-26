@@ -163,23 +163,20 @@ public class CopperAgeBackportFabric implements ModInitializer {
             entries.accept(ModItems.COPPER_TORCH_ITEM.get());
         });
         
+        // Add copper tools after stone tools
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> {
-            entries.accept(ModItems.COPPER_SHOVEL.get());
-            entries.accept(ModItems.COPPER_PICKAXE.get());
-            entries.accept(ModItems.COPPER_AXE.get());
-            entries.accept(ModItems.COPPER_HOE.get());
+            entries.addAfter(Items.STONE_HOE, ModItems.COPPER_SHOVEL.get(), ModItems.COPPER_PICKAXE.get(), ModItems.COPPER_AXE.get(), ModItems.COPPER_HOE.get());
         });
         
+        // Add copper sword after stone sword, copper armor after chainmail armor
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> {
-            entries.accept(ModItems.COPPER_SWORD.get());
-            entries.accept(ModItems.COPPER_HELMET.get());
-            entries.accept(ModItems.COPPER_CHESTPLATE.get());
-            entries.accept(ModItems.COPPER_LEGGINGS.get());
-            entries.accept(ModItems.COPPER_BOOTS.get());
+            entries.addAfter(Items.STONE_SWORD, ModItems.COPPER_SWORD.get());
+            entries.addAfter(Items.CHAINMAIL_BOOTS, ModItems.COPPER_HELMET.get(), ModItems.COPPER_CHESTPLATE.get(), ModItems.COPPER_LEGGINGS.get(), ModItems.COPPER_BOOTS.get());
         });
         
+        // Add copper nugget after iron nugget
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {
-            entries.accept(ModItems.COPPER_NUGGET.get());
+            entries.addAfter(Items.IRON_NUGGET, ModItems.COPPER_NUGGET.get());
         });
     }
 }
