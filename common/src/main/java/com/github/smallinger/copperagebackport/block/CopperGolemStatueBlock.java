@@ -3,6 +3,7 @@ package com.github.smallinger.copperagebackport.block;
 import com.github.smallinger.copperagebackport.block.entity.CopperGolemStatueBlockEntity;
 import com.github.smallinger.copperagebackport.entity.CopperGolemEntity;
 import com.github.smallinger.copperagebackport.ModSounds;
+import com.github.smallinger.copperagebackport.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -14,6 +15,7 @@ import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -38,6 +40,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.util.StringRepresentable;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class CopperGolemStatueBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -110,6 +114,8 @@ public class CopperGolemStatueBlock extends BaseEntityBlock implements SimpleWat
                     level.removeBlock(pos, false);
                     serverLevel.addFreshEntity(golem);
                     level.playSound(null, pos, ModSounds.COPPER_STATUE_BREAK.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    // TODO: Maybe change particle effect - currently using SCRAPE (3005)
+                    level.levelEvent(null, 3005, pos, 0);
                     level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
                     stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
                     return ItemInteractionResult.SUCCESS;
