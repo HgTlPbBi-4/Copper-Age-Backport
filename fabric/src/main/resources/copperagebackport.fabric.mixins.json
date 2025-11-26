@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.github.smallinger.copperagebackport.mixin",
+  "package": "com.github.smallinger.copperagebackport.fabric.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [],

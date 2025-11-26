@@ -55,6 +55,9 @@ public class CopperAgeBackportNeoForge {
         modEventBus.addListener(this::registerRenderers);
 
         NeoForge.EVENT_BUS.register(this);
+        
+        // Register loot modifiers
+        com.github.smallinger.copperagebackport.neoforge.loot.NeoForgeLootTableModifier.register(modEventBus);
 
         CommonClass.init();
     }
@@ -153,6 +156,8 @@ public class CopperAgeBackportNeoForge {
             event.insertAfter(ModItems.COPPER_HELMET.get().getDefaultInstance(), ModItems.COPPER_CHESTPLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.insertAfter(ModItems.COPPER_CHESTPLATE.get().getDefaultInstance(), ModItems.COPPER_LEGGINGS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.insertAfter(ModItems.COPPER_LEGGINGS.get().getDefaultInstance(), ModItems.COPPER_BOOTS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            // Add copper horse armor after leather horse armor (before iron horse armor)
+            event.insertAfter(Items.LEATHER_HORSE_ARMOR.getDefaultInstance(), ModItems.COPPER_HORSE_ARMOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         
         // Add copper nugget after iron nugget

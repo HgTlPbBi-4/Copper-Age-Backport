@@ -41,6 +41,9 @@ public class CopperAgeBackportFabric implements ModInitializer {
         registerEvents();
         registerCreativeTabs();
         registerEntityAttributes();
+        
+        // Register loot table modifications
+        com.github.smallinger.copperagebackport.fabric.loot.FabricLootTableModifier.register();
 
         RegistryHelper.getInstance().flushRegistrationCallbacks();
     }
@@ -172,6 +175,8 @@ public class CopperAgeBackportFabric implements ModInitializer {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> {
             entries.addAfter(Items.STONE_SWORD, ModItems.COPPER_SWORD.get());
             entries.addAfter(Items.CHAINMAIL_BOOTS, ModItems.COPPER_HELMET.get(), ModItems.COPPER_CHESTPLATE.get(), ModItems.COPPER_LEGGINGS.get(), ModItems.COPPER_BOOTS.get());
+            // Add copper horse armor after leather horse armor (before iron horse armor)
+            entries.addAfter(Items.LEATHER_HORSE_ARMOR, ModItems.COPPER_HORSE_ARMOR.get());
         });
         
         // Add copper nugget after iron nugget

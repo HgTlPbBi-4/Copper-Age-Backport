@@ -1,5 +1,6 @@
 package com.github.smallinger.copperagebackport.fabric.platform;
 
+import com.github.smallinger.copperagebackport.fabric.compat.FastChestCompat;
 import com.github.smallinger.copperagebackport.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
 
@@ -23,5 +24,10 @@ public class FabricPlatformHelper implements IPlatformHelper {
     @Override
     public boolean isDevelopmentEnvironment() {
         return loader.isDevelopmentEnvironment();
+    }
+    
+    @Override
+    public boolean isFastChestSimplifiedEnabled() {
+        return FastChestCompat.isSimplifiedChestEnabled();
     }
 }

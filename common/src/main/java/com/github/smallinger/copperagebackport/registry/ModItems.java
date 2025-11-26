@@ -12,6 +12,7 @@ import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.AnimalArmorItem;
 import net.minecraft.core.Direction;
 
 import java.util.function.Supplier;
@@ -41,6 +42,7 @@ public class ModItems {
     public static Supplier<ArmorItem> COPPER_CHESTPLATE;
     public static Supplier<ArmorItem> COPPER_LEGGINGS;
     public static Supplier<ArmorItem> COPPER_BOOTS;
+    public static Supplier<Item> COPPER_HORSE_ARMOR;
     
     // Copper Chest Items
     public static Supplier<BlockItem> COPPER_CHEST_ITEM;
@@ -319,9 +321,9 @@ public class ModItems {
         COPPER_SHOVEL = helper.register(ITEM, "copper_shovel",
             () -> new ShovelItem(CopperTier.INSTANCE, new Item.Properties().stacksTo(1).attributes(ShovelItem.createAttributes(CopperTier.INSTANCE, 1.5F, -3.0F))));
         
-        // Copper Hoe: -2.0 base attack damage, -1.0 attack speed (fast)
+        // Copper Hoe: -1.0 base attack damage, -2.0 attack speed (official MC 1.21.10 values)
         COPPER_HOE = helper.register(ITEM, "copper_hoe",
-            () -> new HoeItem(CopperTier.INSTANCE, new Item.Properties().stacksTo(1).attributes(HoeItem.createAttributes(CopperTier.INSTANCE, -2.0F, -1.0F))));
+            () -> new HoeItem(CopperTier.INSTANCE, new Item.Properties().stacksTo(1).attributes(HoeItem.createAttributes(CopperTier.INSTANCE, -1.0F, -2.0F))));
         
         // Copper Sword: 3.0 base attack damage, -2.4 attack speed
         COPPER_SWORD = helper.register(ITEM, "copper_sword",
@@ -343,5 +345,9 @@ public class ModItems {
         
         COPPER_BOOTS = helper.register(ITEM, "copper_boots",
             () -> new ArmorItem(com.github.smallinger.copperagebackport.item.armor.CopperArmorMaterial.COPPER.get(), ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
+        
+        // Copper Horse Armor: 4 protection (between leather 3 and iron 5)
+        COPPER_HORSE_ARMOR = helper.register(ITEM, "copper_horse_armor",
+            () -> new AnimalArmorItem(com.github.smallinger.copperagebackport.item.armor.CopperArmorMaterial.COPPER.get(), AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
     }
 }

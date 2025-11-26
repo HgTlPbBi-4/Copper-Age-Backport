@@ -2,6 +2,7 @@ package com.github.smallinger.copperagebackport.block;
 
 import com.github.smallinger.copperagebackport.ModSounds;
 import com.github.smallinger.copperagebackport.block.entity.CopperChestBlockEntity;
+import com.github.smallinger.copperagebackport.platform.Services;
 import com.github.smallinger.copperagebackport.registry.ModBlockEntities;
 import com.github.smallinger.copperagebackport.registry.ModBlocks;
 import com.mojang.serialization.MapCodec;
@@ -22,6 +23,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
@@ -32,6 +35,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Supplier;
+
 
 public class CopperChestBlock extends ChestBlock {
     private static final Map<Block, Supplier<Block>> COPPER_TO_COPPER_CHEST_MAPPING = Map.of(
@@ -78,6 +82,30 @@ public class CopperChestBlock extends ChestBlock {
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new CopperChestBlockEntity(pos, state);
+    }
+    
+    /**
+     * Override render shape to support FastChest mod on Fabric.
+     * When FastChest's simplified mode is enabled, use MODEL rendering instead of ENTITYBLOCK_ANIMATED.
+     */
+    @Override
+    public RenderShape getRenderShape(BlockState state) {
+        if (Services.PLATFORM.isFastChestSimplifiedEnabled()) {
+            return RenderShape.MODEL;
+        }
+        return super.getRenderShape(state);
+    }
+    
+    /**
+     * Override ticker to support FastChest mod on Fabric.
+     * When FastChest's simplified mode is enabled, disable the ticker for better performance.
+     */
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        if (Services.PLATFORM.isFastChestSimplifiedEnabled()) {
+            return null;
+        }
+        return super.getTicker(level, state, type);
     }
 
     public static BlockState getFromCopperBlock(Block block, Direction direction, Level level, BlockPos pos) {
