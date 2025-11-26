@@ -4,6 +4,10 @@
     "minecraft:chest",
     "minecraft:trapped_chest",
     {
+      "id": "#c:chests/wooden",
+      "required": false
+    },
+    {
       "id": "ironchest:iron_chest",
       "required": false
     },
