@@ -106,6 +106,18 @@ public class ModItems {
     public static Supplier<BlockItem> WAXED_EXPOSED_COPPER_LANTERN_ITEM;
     public static Supplier<BlockItem> WAXED_WEATHERED_COPPER_LANTERN_ITEM;
     public static Supplier<BlockItem> WAXED_OXIDIZED_COPPER_LANTERN_ITEM;
+    
+    // Copper Chain Items (Weathering)
+    public static Supplier<BlockItem> COPPER_CHAIN_ITEM;
+    public static Supplier<BlockItem> EXPOSED_COPPER_CHAIN_ITEM;
+    public static Supplier<BlockItem> WEATHERED_COPPER_CHAIN_ITEM;
+    public static Supplier<BlockItem> OXIDIZED_COPPER_CHAIN_ITEM;
+    
+    // Waxed Copper Chain Items
+    public static Supplier<BlockItem> WAXED_COPPER_CHAIN_ITEM;
+    public static Supplier<BlockItem> WAXED_EXPOSED_COPPER_CHAIN_ITEM;
+    public static Supplier<BlockItem> WAXED_WEATHERED_COPPER_CHAIN_ITEM;
+    public static Supplier<BlockItem> WAXED_OXIDIZED_COPPER_CHAIN_ITEM;
 
     public static void register() {
         Constants.LOG.info("Registering items for {}", Constants.MOD_NAME);
@@ -267,6 +279,32 @@ public class ModItems {
         
         WAXED_OXIDIZED_COPPER_LANTERN_ITEM = helper.register(ITEM, "waxed_oxidized_copper_lantern",
             () -> new BlockItem(ModBlocks.WAXED_OXIDIZED_COPPER_LANTERN.get(), new Item.Properties()));
+        
+        // Register Copper Chain Items (Weathering)
+        COPPER_CHAIN_ITEM = helper.register(ITEM, "copper_chain",
+            () -> new BlockItem(ModBlocks.COPPER_CHAIN.get(), new Item.Properties()));
+        
+        EXPOSED_COPPER_CHAIN_ITEM = helper.register(ITEM, "exposed_copper_chain",
+            () -> new BlockItem(ModBlocks.EXPOSED_COPPER_CHAIN.get(), new Item.Properties()));
+        
+        WEATHERED_COPPER_CHAIN_ITEM = helper.register(ITEM, "weathered_copper_chain",
+            () -> new BlockItem(ModBlocks.WEATHERED_COPPER_CHAIN.get(), new Item.Properties()));
+        
+        OXIDIZED_COPPER_CHAIN_ITEM = helper.register(ITEM, "oxidized_copper_chain",
+            () -> new BlockItem(ModBlocks.OXIDIZED_COPPER_CHAIN.get(), new Item.Properties()));
+        
+        // Register Waxed Copper Chain Items
+        WAXED_COPPER_CHAIN_ITEM = helper.register(ITEM, "waxed_copper_chain",
+            () -> new BlockItem(ModBlocks.WAXED_COPPER_CHAIN.get(), new Item.Properties()));
+        
+        WAXED_EXPOSED_COPPER_CHAIN_ITEM = helper.register(ITEM, "waxed_exposed_copper_chain",
+            () -> new BlockItem(ModBlocks.WAXED_EXPOSED_COPPER_CHAIN.get(), new Item.Properties()));
+        
+        WAXED_WEATHERED_COPPER_CHAIN_ITEM = helper.register(ITEM, "waxed_weathered_copper_chain",
+            () -> new BlockItem(ModBlocks.WAXED_WEATHERED_COPPER_CHAIN.get(), new Item.Properties()));
+        
+        WAXED_OXIDIZED_COPPER_CHAIN_ITEM = helper.register(ITEM, "waxed_oxidized_copper_chain",
+            () -> new BlockItem(ModBlocks.WAXED_OXIDIZED_COPPER_CHAIN.get(), new Item.Properties()));
 
         // Register Copper Tools
         // Copper Axe: 7.0 base attack damage + 1.0 material bonus = 8 total, -3.2 attack speed
